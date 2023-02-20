@@ -246,12 +246,12 @@ cus_name like 'A%' or cus_name like '%A';
         If rating >2 print “Average Service” 
         else print “Poor Service”.
  */
+
 call rating_procedure();
 
 
 /*  Defination of Stored Procedure rating_procedure  */
 
-/*
 DELIMITER $$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `rating_procedure`()
 BEGIN
@@ -266,8 +266,8 @@ END AS Type_of_Service from
 	(select Q.supp_id, avg(Q.rat_ratstars) as Average from
 		(select SP.supp_id, P.ord_id, P.rat_ratstars from 
 			supplier_pricing  as SP 
-            inner join
-			    (select O.pricing_id, R.ord_id, R.rat_ratstars from 
+                        inner join
+			  (select O.pricing_id, R.ord_id, R.rat_ratstars from 
 			     orders as O
 			     inner join 
 			     rating as R
@@ -279,5 +279,3 @@ END AS Type_of_Service from
 where A.supp_id = S.supp_id) as B;
 END$$
 DELIMITER ;
-
-*/
