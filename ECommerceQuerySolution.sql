@@ -64,6 +64,7 @@ FOREIGN KEY (ORD_ID) REFERENCES orders(ORD_ID)
 );
 
 /* 2)	Insert the following data in the table created above */
+
 /* Supplier Table */
 
 INSERT INTO SUPPLIER VALUES(1,"Rajesh Retails","Delhi",'1234567890');
